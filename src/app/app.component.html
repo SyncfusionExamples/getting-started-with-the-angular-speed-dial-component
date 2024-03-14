@@ -1,0 +1,20 @@
+<button ejs-speeddial openIconCss="e-icons e-edit" [items]="items" 
+target="#target_id" direction="Left" mode="Radial" 
+[radialSettings]="radialSettings" cssClass="e-outline" itemTemplate="itemTemplate" 
+(clicked)="clicked($event)">
+<ng-template #itemTemplate let-items="">
+  <div class="itemlist">
+    <span class="icon {{items.iconCss}}" style="padding:3px"></span>
+  </div>
+</ng-template>
+</button>
+<ejs-grid #gridObj id="target_id" [dataSource]='data' [editSettings]="editSettings" 
+height="330px" width="700px">
+  <e-columns>
+    <e-column field='OrderID' width='100' textAlign="Right"></e-column>
+    <e-column field='CustomerID' width='100'></e-column>
+    <e-column field='EmployeeID' width='100' textAlign="Right"></e-column>
+    <e-column field='Freight' width='100' format="C2" textAlign="Right"></e-column>
+    <e-column field='ShipCountry' width='100'></e-column>
+  </e-columns>
+</ejs-grid>
